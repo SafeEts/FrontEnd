@@ -1,0 +1,4 @@
+.imagemDeFundo::before{
+    background-image: url('../public/coloridoBosch.png') ;
+    /* background-color: #FFFF; */
+}

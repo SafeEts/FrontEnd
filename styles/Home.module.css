@@ -1,0 +1,4 @@
+.icone::after{
+  position: absolute;
+  background: url('../public/user.svg') ;
+}
