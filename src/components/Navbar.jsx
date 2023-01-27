@@ -1,27 +1,15 @@
-import { Fragment } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import logo from "../../public/favicon.png"
 import Image from 'next/image'
-import { useRouter } from 'next/router'
-import colorido from "../../public/coloridoBosch.png"
 import logo_bosch from "../../public/logo-bosch.png"
 import styles from '../../styles/Nav.module.css'
 
-
-function classNames(...classes) {
-  return classes.filter(Boolean).join(' ')
-}
-
 export default function NavBar() {
-  const route = useRouter()
-  console.log(route.pathname)
-  const navigation = [
-  ]
-  return (
 
+  return (
     // Returna a nav bar, biblioteca faz o gerenciamento da renderização
     <Disclosure as="nav" className="bg-slate-800">
-      {({ open }) => (
+      {() => (
 
         // começa o fragment onde o retorno é renderizado
         <>
@@ -52,7 +40,6 @@ export default function NavBar() {
                     src={logo_bosch}
                     alt="Bosch"
                   />
-          
                 </div>
 
               </div>

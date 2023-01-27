@@ -1,11 +1,7 @@
 import Image from 'next/image'
-import logo from '../../public/favicon.png'
-import styles from '../../styles/Home.module.css'
 import iconUser from '../../public/user.svg'
 import iconLock from '../../public/lock-closed.svg'
 
-//import {  } from 'next/font/google'
-//importar o quicksand do google e usar
 export default function Home() {
   function handleSubmit(){
 
@@ -29,7 +25,6 @@ export default function Home() {
                       alt="Icone usuário"
                     />
                   </div>
-                
 
               </div>
 
