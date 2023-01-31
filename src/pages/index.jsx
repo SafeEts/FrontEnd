@@ -1,10 +1,23 @@
 import Image from 'next/image'
 import iconUser from '../../public/user.svg'
 import iconLock from '../../public/lock-closed.svg'
+import { useRouter } from 'next/router'
+import swal from 'sweetalert'
 
 export default function Home() {
-  function handleSubmit(){
 
+  const route = useRouter()
+
+  async function handleSubmit(e){
+    e.preventDefault()
+    const user = e.target.usuario.value
+    const senha = e.target.senha.value
+    console.log(user, senha)
+    if (user == "admin" && senha == "admin") {
+      route.push("/tabela")
+    }else{
+      swal("Usuario ou senha incorretos",{icon:"error"})
+    }
   }
   return (
     <>

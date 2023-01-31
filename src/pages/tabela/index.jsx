@@ -4,15 +4,17 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 
-export default function Table({ }) {
+export async function getServerSideProps(){
+  const app = await fetch('http://localhost:3000/api/form')
+  const response = await app.json()
+  return{
+    props: {response}
+  }
+}
 
-  const cadastros = [{
-    _id: "1",
-    edv: '12345',
-    date_out: '25/02/2033 23:43 UTC-3',
-    date_in: '26/02/2033 05:32 UTC-3',
-  }]
-  const status = cadastros.date_in ? true : false
+export default function Table({ response }) {
+  console.log(response)
+  response = response.data
 
   return (
     <div className="flex flex-col">
@@ -84,20 +86,20 @@ export default function Table({ }) {
 
               <tbody className="divide-y divide-gray-200">
 
-                {cadastros.map((colaborador) => (
+                {response.map((colaborador) => (
                   <tr key={colaborador._id}>
                     <td className="px-6 py-4 text-sm text-gray-800 whitespace-nowrap">
                       {colaborador._id}
                     </td>
 
                     <td className="pl-6 py-4 text-sm font-medium text-gray-800 ">
-                      {colaborador.edv}
+                      {colaborador.EDV}
                     </td>
                     <td className="px-6 py-4 text-sm text-gray-800 whitespace-nowrap">
-                      {colaborador.date_out}
+                      {colaborador.Horario}
                     </td>
                     <td className="px-6 py-4 text-sm text-gray-800 whitespace-nowrap">
-                      {colaborador.date_in}
+                      {colaborador.Horario}
                     </td>
                     <td className={classNames(
                       (!colaborador.situacao) ? 'text-yellow-500' : 'text-green-600', 'uppercase px-6 py-4 text-sm whitespace-nowrap'

@@ -3,9 +3,10 @@ import logo from "../../public/favicon.png"
 import Image from 'next/image'
 import logo_bosch from "../../public/logo-bosch.png"
 import styles from '../../styles/Nav.module.css'
+import { useRouter } from 'next/router'
 
 export default function NavBar() {
-
+  const route = useRouter()
   return (
     // Returna a nav bar, biblioteca faz o gerenciamento da renderização
     <Disclosure as="nav" className="bg-slate-800">
