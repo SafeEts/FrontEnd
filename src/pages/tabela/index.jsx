@@ -5,7 +5,7 @@ function classNames(...classes) {
 }
 
 export async function getServerSideProps(){
-  const app = await fetch('http://localhost:3000/api/form')
+  const app = await fetch('/api/form')
   const response = await app.json()
   return{
     props: {response}
