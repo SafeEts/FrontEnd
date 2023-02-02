@@ -1,5 +1,5 @@
 import { Disclosure, Menu, Transition } from '@headlessui/react'
-import logo from "../../public/favicon.png"
+import logo from "../../public/logo_branca.png"
 import Image from 'next/image'
 import logo_bosch from "../../public/logo-bosch.png"
 import styles from '../../styles/Nav.module.css'
@@ -15,19 +15,18 @@ export default function NavBar() {
         // começa o fragment onde o retorno é renderizado
         <>
           {/* div geral que envelopa toda a nav */}
-          <div className={`h-fit before:block before:w-full before:h-3 imagemDeFundo ${styles.imagemDeFundo}`}>
+          <div className={`h-28 before:block before:w-full before:h-3 imagemDeFundo ${styles.imagemDeFundo}`}>
 
             <div className="relative flex h-20   items-center justify-between">
 
               {/* Div que envelopa o branding */}
-              <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-between">
+              <div className="mt-4 flex flex-1 items-center justify-center sm:items-stretch sm:justify-between ">
                 <div onClick={() => { route.push('/') }} className="flex flex-shrink-0 items-center cursor-pointer">
                   <Image
-                    className="w-auto block"
+                    className="w-48 m-8 align-middle"
                     src={logo}
                     alt="EaseSafe"
                   />
-                  <span className='hidden sm:inline text-gray-100 font-medium uppercase'>EaseSafe</span>
                 </div>
                 
               </div>
