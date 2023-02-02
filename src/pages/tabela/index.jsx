@@ -100,7 +100,7 @@ export default function Table({ posts }) {
                       {colaborador.Horario}
                     </td>
                     <td className="px-6 py-4 text-sm text-gray-800 whitespace-nowrap">
-                      {colaborador.TagId}
+                      {colaborador.TagID}
                     </td>
                     <td className={classNames(
                       (!colaborador.situacao) ? 'text-yellow-500' : 'text-green-600', 'uppercase px-6 py-4 text-sm whitespace-nowrap'
