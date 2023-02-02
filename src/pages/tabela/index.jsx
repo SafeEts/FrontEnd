@@ -16,7 +16,6 @@ export async function getServerSideProps(){
 }
 
 export default function Table({ posts }) {
-  response = posts
 
   return (
     <div className="flex flex-col">
@@ -88,7 +87,7 @@ export default function Table({ posts }) {
 
               <tbody className="divide-y divide-gray-200">
 
-                {response.map((colaborador) => (
+                {posts.map((colaborador) => (
                   <tr key={colaborador._id}>
                     <td className="px-6 py-4 text-sm text-gray-800 whitespace-nowrap">
                       {colaborador._id}
