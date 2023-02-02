@@ -1,20 +1,22 @@
 import React from "react";
+import clientPromise from "../../lib/mongodb";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 
 export async function getServerSideProps(){
-  const app = await fetch('/api/form')
-  const response = await app.json()
+  const client = await clientPromise;
+  const db = client.db("EaseSafe");
+  const posts = await db.collection("Registros").find({}).toArray();
+
   return{
-    props: {response}
+    props: {posts}
   }
 }
 
-export default function Table({ response }) {
-  console.log(response)
-  response = response.data
+export default function Table({ posts }) {
+  response = posts
 
   return (
     <div className="flex flex-col">
